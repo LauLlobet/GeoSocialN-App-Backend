@@ -1,4 +1,5 @@
-package com.example.YOURPROJECT;
+package com.tubtale.otbackend;
+
 import com.vividsolutions.jts.geom.Coordinate;
 import com.vividsolutions.jts.geom.GeometryFactory;
 import com.vividsolutions.jts.geom.Point;
@@ -116,6 +117,14 @@ public class Tree {
     public double getY(){
         this.y = location.getY();
         return this.y;
+    }
+
+    public void setX(float x){
+        setLocation(x,location.getY());
+    }
+
+    public void setY(float y){
+        setLocation(location.getX(),y);
     }
 }
 
