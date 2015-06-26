@@ -1,4 +1,4 @@
-package com.tubtale.otbackend;
+package com.example.YOURPROJECT;
 
 
 import org.codehaus.jackson.map.ObjectMapper;
