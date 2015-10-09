@@ -82,7 +82,9 @@ public class TwitterMessageComposer {
                 pt7.length();
         int restOfCharactersAvaliable = maxLengthTweet - forcedCharNumbers;
         if(!( restOfCharactersAvaliable <= 10 || textBeforeLockOrBury.length() == 0)) {
-            String trimmedTextBeforeLockOrBury = "\""+textBeforeLockOrBury.substring(0,restOfCharactersAvaliable)+"\"";
+            String trimmedTextBeforeLockOrBury = "\""+textBeforeLockOrBury+"\"";
+            if(textBeforeLockOrBury.length() > restOfCharactersAvaliable )
+                trimmedTextBeforeLockOrBury = "\""+textBeforeLockOrBury.substring(0,restOfCharactersAvaliable)+"\"";
             return pt0 + pt1 + pt2 + pt3 + pt4 + trimmedTextBeforeLockOrBury + pt6 + pt7 + pt8ItsLengthnotCounts;
         }
         String firstAlternativeMessage = pt0 + pt1 + pt2 + pt3 + " un mensaje secreto, " + pt7 + pt8ItsLengthnotCounts;
