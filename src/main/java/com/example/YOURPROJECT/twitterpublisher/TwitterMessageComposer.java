@@ -19,7 +19,7 @@ public class TwitterMessageComposer {
 
     public TwitterMessageComposer(String text, float longitude, float latitude, int treeId){
         usersToNotify = this.findUsersInText(text);
-        textBeforeLockOrBury = StringToUnicodeBoldConverter.convertString("\""+ this.findTextbeforeLockOrBury(text)+ "\"");
+        textBeforeLockOrBury = "\""+StringToUnicodeBoldConverter.convertString(this.findTextbeforeLockOrBury(text))+"\"";
         DistanceStringComposer distanceStringComposer = new DistanceStringComposer(longitude,latitude);
         distanceString = distanceStringComposer.toString();
         this.treeId = treeId;
