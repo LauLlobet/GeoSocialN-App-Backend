@@ -1,4 +1,4 @@
-package com.tubtale.otbackend;
+package com.example.YOURPROJECT;
 
 public class StaticStrings {
 

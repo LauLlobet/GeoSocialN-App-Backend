@@ -1,4 +1,4 @@
-package com.tubtale.otbackend;
+package com.example.YOURPROJECT;
 
 
 import com.tubtale.otbackend.twitterpublisher.TreeToTwitterPublisher;
