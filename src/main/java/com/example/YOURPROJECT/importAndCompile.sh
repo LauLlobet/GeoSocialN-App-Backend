@@ -6,4 +6,9 @@ rm *Hibernate*;
 cp safe/* .;
 rm -rf safe/;
 find . -name "*.java" | xargs sed  -i '' -e  's/com.tubtale.otbackend/com.example.YOURPROJECT/g'
+cd ../../../../../../
+git add -A
+git commit -m "TO COMPILAR to compile server"
+git push
+
 # gradle war // will compileº

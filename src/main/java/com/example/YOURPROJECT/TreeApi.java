@@ -43,7 +43,7 @@ public class TreeApi {
                     ansList.add(t);
                 }
             }
-            int emptyTrees = numbersOfTreesPerGridCell - TreeDao.getInstance().countTotalTreesInGridPoint(y,x);
+            int emptyTrees = numbersOfTreesPerGridCell - TreeDao.getInstance().countTotalTreesInGridPoint(x, y);
             return "{ \"treeContent\":" + mapper.writeValueAsString(ansList) + ", \"emptyTrees\":" + emptyTrees + " }";
         }catch (Exception e){
             e.printStackTrace();
