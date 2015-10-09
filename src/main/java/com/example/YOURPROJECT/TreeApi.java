@@ -1,6 +1,7 @@
-package com.example.YOURPROJECT;
+package com.tubtale.otbackend;
 
 
+import com.tubtale.otbackend.twitterpublisher.TreeToTwitterPublisher;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.map.annotate.JsonSerialize;
 import org.glassfish.jersey.server.JSONP;
@@ -19,6 +20,10 @@ import java.util.List;
 public class TreeApi {
 
     public static final int numbersOfTreesPerGridCell = 5;
+    TreeToTwitterPublisher treeToTweeterPublisher;
+    public TreeApi(){
+        treeToTweeterPublisher = new TreeToTwitterPublisher();
+    }
 
     @GET
     @JSONP(queryParam = "callback")
@@ -27,12 +32,10 @@ public class TreeApi {
                               @QueryParam("dontInclude") String dontIncludeStrArg) throws Exception {
 
         ObjectMapper mapper = new ObjectMapper();
-        System.out.println("dontinclude....." + dontIncludeStrArg);
         try {
             ArrayList<Integer> dontInclude = mapper.readValue(dontIncludeStrArg, mapper.getTypeFactory().constructCollectionType(List.class, Integer.class));
             mapper.setSerializationInclusion(JsonSerialize.Inclusion.NON_DEFAULT);
             int numberOfTrees = 7 + dontInclude.size();
-            System.out.println("---------------DONT INCLUDE SIZE---------------------------->" + dontInclude.size());
             List<Tree> trees = TreeDao.getInstance().getAllTrees(x, y, numberOfTrees);
             List<Tree> ansList = new ArrayList<Tree>();
             for (Tree t : trees) {
@@ -84,6 +87,7 @@ public class TreeApi {
         }
         tree.setTimestamp(new Timestamp(System.currentTimeMillis()));
         TreeDao.getInstance().save(tree);
+        treeToTweeterPublisher.publishTreeInTwitterUsersMentioned(tree.getText(),x,y,tree.getId());
         return "{ \"treeContent\":" + new ObjectMapper().writeValueAsString(tree) +",\"emptyTrees\":"+emptyTrees+"}" ;
     }
 

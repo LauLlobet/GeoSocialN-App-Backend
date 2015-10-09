@@ -1,4 +1,4 @@
-package com.example.YOURPROJECT;
+package com.tubtale.otbackend;
 
 import com.vividsolutions.jts.geom.Coordinate;
 import com.vividsolutions.jts.geom.GeometryFactory;

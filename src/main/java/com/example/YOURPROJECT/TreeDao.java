@@ -1,4 +1,4 @@
-package com.example.YOURPROJECT;
+package com.tubtale.otbackend;
 
 import org.hibernate.Session;
 
