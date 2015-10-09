@@ -44,7 +44,7 @@ public class TwitterMessageComposer {
         try {
             String[] splittedText = text.split(StaticStrings.BURY_KEYWORD_FOR_REGEXP);
             String[] ans = splittedText[0].split(StaticStrings.LOCK_KEYWORD_FOR_REGEXP);
-            return ans[0].trim().replace("@","");
+            return ans[0].trim().replace("@","").trim().replaceAll(" +", " ");
         }catch (Exception e){
             return text.trim();
         }
