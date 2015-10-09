@@ -1,4 +1,4 @@
-package com.tubtale.otbackend.twitterpublisher;
+package com.example.YOURPROJECT.twitterpublisher;
 
 /**
  * Created by quest on 07/10/15.

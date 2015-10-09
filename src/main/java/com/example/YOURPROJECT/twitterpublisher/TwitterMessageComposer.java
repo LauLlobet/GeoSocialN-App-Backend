@@ -1,7 +1,7 @@
-package com.tubtale.otbackend.twitterpublisher;
+package com.example.YOURPROJECT.twitterpublisher;
 
-import com.tubtale.otbackend.StaticStrings;
-import com.tubtale.otbackend.utils.StringToUnicodeBoldConverter;
+import com.example.YOURPROJECT.StaticStrings;
+import com.example.YOURPROJECT.utils.StringToUnicodeBoldConverter;
 
 import javax.naming.directory.Attributes;
 import java.util.ArrayList;

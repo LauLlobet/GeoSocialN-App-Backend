@@ -5,4 +5,4 @@ rm *Application*;
 rm *Hibernate*;
 cp safe/* .;
 rm -rf safe/;
-find . -name "*.java" | xargs sed -i 's/package com.tubtale.otbackend;/package com.example.YOURPROJECT;/g'
+find . -name "*.java" | xargs sed -i 's/com.tubtale.otbackend/com.example.YOURPROJECT/g'

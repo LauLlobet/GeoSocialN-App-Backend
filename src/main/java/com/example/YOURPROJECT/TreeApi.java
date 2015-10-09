@@ -1,7 +1,7 @@
 package com.example.YOURPROJECT;
 
 
-import com.tubtale.otbackend.twitterpublisher.TreeToTwitterPublisher;
+import com.example.YOURPROJECT.twitterpublisher.TreeToTwitterPublisher;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.map.annotate.JsonSerialize;
 import org.glassfish.jersey.server.JSONP;

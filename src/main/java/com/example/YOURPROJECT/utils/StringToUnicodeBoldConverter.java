@@ -1,4 +1,4 @@
-package com.tubtale.otbackend.utils;
+package com.example.YOURPROJECT.utils;
 import com.ibm.icu.lang.UCharacter;
 
 public class StringToUnicodeBoldConverter {

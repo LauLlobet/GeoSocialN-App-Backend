@@ -1,4 +1,4 @@
-package com.tubtale.otbackend.twitterpublisher;
+package com.example.YOURPROJECT.twitterpublisher;
 
 import java.util.ArrayList;
 
