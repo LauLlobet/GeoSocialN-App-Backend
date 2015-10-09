@@ -6,3 +6,4 @@ rm *Hibernate*;
 cp safe/* .;
 rm -rf safe/;
 find . -name "*.java" | xargs sed -i 's/com.tubtale.otbackend/com.example.YOURPROJECT/g'
+# gradle war // will compileº
