@@ -40,6 +40,7 @@ public class TreeApi {
             List<Tree> ansList = new ArrayList<Tree>();
             for (Tree t : trees) {
                 if (!dontInclude.contains(t.getId())) {
+                    t.anonimize();
                     ansList.add(t);
                 }
             }
@@ -65,6 +66,7 @@ public class TreeApi {
                           @QueryParam("x") float x,
                           @QueryParam("y") float y) throws Exception {
         Tree tree = TreeDao.getInstance().getTree(id);
+        tree.anonimize();
         int emptyTrees = numbersOfTreesPerGridCell - TreeDao.getInstance().countTotalTreesInGridPoint(x,y);
         return "{ \"treeContent\":" + new ObjectMapper().writeValueAsString(tree) +",\"emptyTrees\":"+emptyTrees+"}" ;
     }
