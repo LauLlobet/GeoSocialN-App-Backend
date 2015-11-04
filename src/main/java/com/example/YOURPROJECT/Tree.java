@@ -82,9 +82,6 @@ public class Tree {
     public int getMetersToHide(){ return this.metersToHide; }
     public void setMetersToHide(int metersToHide) { this.metersToHide = metersToHide; }
 
-    public int getVotes(){ return this.metersToHide; }
-    public void setVotes(int metersToHide) { this.metersToHide = metersToHide; }
-
     public java.sql.Timestamp getTimestamp(){ return this.timestamp; }
     public void setTimestamp(java.sql.Timestamp timestamp){ this.timestamp = timestamp; }
     @Override
@@ -93,14 +90,16 @@ public class Tree {
         if (o == null || getClass() != o.getClass()) return false;
 
         Tree tree = (Tree) o;
-
-        if (!id.equals(tree.getId())) return false;
-        if (text != null ? !text.equals(tree.text) : tree.text != null) return false;
-        if (ip != null ? !ip.equals(tree.ip) : tree.ip != null) return false;
-        if (metersToHide != tree.getMetersToHide()) return false;
-        if (timestamp != null ? !timestamp.equals(tree.timestamp) : tree.timestamp != null) return false;
-
-        return true;
+        try {
+            if (!id.equals(tree.getId())) return false;
+            if (text != null ? !text.equals(tree.text) : tree.text != null) return false;
+            if (ip != null ? !ip.equals(tree.ip) : tree.ip != null) return false;
+            if (metersToHide != tree.getMetersToHide()) return false;
+            if (timestamp != null ? !timestamp.equals(tree.timestamp) : tree.timestamp != null) return false;
+            return true;
+        } catch(Exception e) {
+            return false;
+        }
     }
 
     @Override

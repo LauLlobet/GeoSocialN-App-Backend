@@ -38,15 +38,17 @@ public class TreeApi {
             int numberOfTrees = 7 + dontInclude.size();
             List<Tree> trees = TreeDao.getInstance().getAllTrees(x, y, numberOfTrees);
             List<Tree> ansList = new ArrayList<Tree>();
+            Tree lastOne;
             for (Tree t : trees) {
                 if (!dontInclude.contains(t.getId())) {
                     t.anonimize();
-                    System.out.println("Meters to hide backend:" + t.getMetersToHide());
+                    System.out.println("Meters to hide backend: LASTONE" + t.getMetersToHide());
                     ansList.add(t);
+                    lastOne = t;
                 }
             }
             int emptyTrees = numbersOfTreesPerGridCell - TreeDao.getInstance().countTotalTreesInGridPoint(x, y);
-            return "{ \"treeContent\":" + mapper.writeValueAsString(ansList) + ", \"emptyTrees\":" + emptyTrees + " }";
+            return "{ \"treeContent\":" + mapper.writeValueAsString(lastOne) + ", \"emptyTrees\":" + emptyTrees + " }";
         }catch (Exception e){
             e.printStackTrace();
             return "{ \"treeContent\":null,\"emptyTrees\":"+0+"}" ;

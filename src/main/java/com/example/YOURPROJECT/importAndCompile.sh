@@ -10,5 +10,6 @@ cd ../../../../../../
 git add -A
 git commit -m "TO COMPILAR to compile server"
 git push
+ssh -i /Users/quest/.ssh/robinKeyPair.pem ubuntu@52.10.176.122 'cd ~/;./compileAndrun.sh'
 
 # gradle war // will compileº
