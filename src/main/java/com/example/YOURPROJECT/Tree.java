@@ -90,16 +90,14 @@ public class Tree {
         if (o == null || getClass() != o.getClass()) return false;
 
         Tree tree = (Tree) o;
-        try {
-            if (!id.equals(tree.getId())) return false;
-            if (text != null ? !text.equals(tree.text) : tree.text != null) return false;
-            if (ip != null ? !ip.equals(tree.ip) : tree.ip != null) return false;
-            if (metersToHide != tree.getMetersToHide()) return false;
-            if (timestamp != null ? !timestamp.equals(tree.timestamp) : tree.timestamp != null) return false;
-            return true;
-        } catch(Exception e) {
-            return false;
-        }
+
+        if (!id.equals(tree.getId())) return false;
+        if (text != null ? !text.equals(tree.text) : tree.text != null) return false;
+        if (ip != null ? !ip.equals(tree.ip) : tree.ip != null) return false;
+        if (metersToHide != tree.getMetersToHide()) return false;
+        if (timestamp != null ? !timestamp.equals(tree.timestamp) : tree.timestamp != null) return false;
+
+        return true;
     }
 
     @Override

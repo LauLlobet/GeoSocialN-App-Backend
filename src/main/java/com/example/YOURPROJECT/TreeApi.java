@@ -34,21 +34,18 @@ public class TreeApi {
         ObjectMapper mapper = new ObjectMapper();
         try {
             ArrayList<Integer> dontInclude = mapper.readValue(dontIncludeStrArg, mapper.getTypeFactory().constructCollectionType(List.class, Integer.class));
-            mapper.setSerializationInclusion(JsonSerialize.Inclusion.NON_DEFAULT);
+            //mapper.setSerializationInclusion(JsonSerialize.Inclusion.NON_DEFAULT);
             int numberOfTrees = 7 + dontInclude.size();
             List<Tree> trees = TreeDao.getInstance().getAllTrees(x, y, numberOfTrees);
             List<Tree> ansList = new ArrayList<Tree>();
-            Tree lastOne = new Tree();
             for (Tree t : trees) {
                 if (!dontInclude.contains(t.getId())) {
                     t.anonimize();
-                    System.out.println("Meters to hide backend: LASTONE" + t.getMetersToHide());
                     ansList.add(t);
-                    lastOne = t;
                 }
             }
             int emptyTrees = numbersOfTreesPerGridCell - TreeDao.getInstance().countTotalTreesInGridPoint(x, y);
-            return "{ \"treeContent\":" + mapper.writeValueAsString(lastOne) + ", \"emptyTrees\":" + emptyTrees + " }";
+            return "{ \"treeContent\":" + mapper.writeValueAsString(ansList) + ", \"emptyTrees\":" + emptyTrees + " }";
         }catch (Exception e){
             e.printStackTrace();
             return "{ \"treeContent\":null,\"emptyTrees\":"+0+"}" ;

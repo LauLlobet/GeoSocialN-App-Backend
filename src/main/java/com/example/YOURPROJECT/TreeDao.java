@@ -54,7 +54,6 @@ public class TreeDao {
                 "WHERE " +
                 "Tree.location && " +
                 "ST_MakeEnvelope("+minLongitude+", "+minLatitude+", "+ (minLongitude+0.0001) +", "+ (minLatitude+0.0001) +", 4326) ";
-        System.out.println(query);
         Integer total = ((BigInteger) session.createSQLQuery(query).uniqueResult()).intValue();
         session.flush();
         session.close();
