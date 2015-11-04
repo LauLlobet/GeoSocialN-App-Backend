@@ -82,6 +82,9 @@ public class Tree {
     public int getMetersToHide(){ return this.metersToHide; }
     public void setMetersToHide(int metersToHide) { this.metersToHide = metersToHide; }
 
+    public int getVotes(){ return this.metersToHide; }
+    public void setVotes(int metersToHide) { this.metersToHide = metersToHide; }
+
     public java.sql.Timestamp getTimestamp(){ return this.timestamp; }
     public void setTimestamp(java.sql.Timestamp timestamp){ this.timestamp = timestamp; }
     @Override
