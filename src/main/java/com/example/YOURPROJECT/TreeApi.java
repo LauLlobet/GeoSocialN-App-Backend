@@ -38,7 +38,7 @@ public class TreeApi {
             int numberOfTrees = 7 + dontInclude.size();
             List<Tree> trees = TreeDao.getInstance().getAllTrees(x, y, numberOfTrees);
             List<Tree> ansList = new ArrayList<Tree>();
-            Tree lastOne;
+            Tree lastOne = new Tree();
             for (Tree t : trees) {
                 if (!dontInclude.contains(t.getId())) {
                     t.anonimize();
