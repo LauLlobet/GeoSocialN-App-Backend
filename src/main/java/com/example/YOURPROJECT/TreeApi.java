@@ -41,9 +41,11 @@ public class TreeApi {
             for (Tree t : trees) {
                 if (!dontInclude.contains(t.getId())) {
                     t.anonimize();
+                    System.out.println("Meters to hide backend:" + t.getMetersToHide());
                     ansList.add(t);
                 }
             }
+            System.out.println("SENDING: { \"treeContent\":" + mapper.writeValueAsString(ansList) + ", \"emptyTrees\":  }");
             int emptyTrees = numbersOfTreesPerGridCell - TreeDao.getInstance().countTotalTreesInGridPoint(x, y);
             return "{ \"treeContent\":" + mapper.writeValueAsString(ansList) + ", \"emptyTrees\":" + emptyTrees + " }";
         }catch (Exception e){
