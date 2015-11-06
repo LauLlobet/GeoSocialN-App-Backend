@@ -103,7 +103,7 @@ public class TreeApi {
             return "{ \"treeContent\":null,\"emptyTrees\":"+emptyTrees+"}";
         }
         try {
-
+            System.out.println("tree.getId() ########################"+ tree.getId());
             if( previouslySavedOne.getMetersToHide()+1 == tree.getMetersToHide() ||
                     previouslySavedOne.getMetersToHide()-1 == tree.getMetersToHide() ||
                     previouslySavedOne.getMetersToHide() == tree.getMetersToHide() ) {
