@@ -1,0 +1,1 @@
+sudo pkill java;rm -f nohup.out;nohup sudo java -cp  jetty-runner-9.2.13.v20150730.jar org.eclipse.jetty.runner.Runner  --port 80 --path /YOUR_PATH YOUR_PATH.war --path /VisitTreeNumber  /var/lib/jetty/webapps/root/VisitTreeNumber/ --path /  /var/lib/jetty/webapps/root/welcome/ --path /blog  /var/lib/jetty/webapps/root/blog/ &
