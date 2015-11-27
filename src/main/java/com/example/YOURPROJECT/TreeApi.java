@@ -66,7 +66,9 @@ public class TreeApi {
                           @QueryParam("x") float x,
                           @QueryParam("y") float y) throws Exception {
         Tree tree = TreeDao.getInstance().getTree(id);
-        tree.anonimize();
+        if(tree != null){
+            tree.anonimize();
+        }
         int emptyTrees = numbersOfTreesPerGridCell - TreeDao.getInstance().countTotalTreesInGridPoint(x,y);
         return "{ \"treeContent\":" + new ObjectMapper().writeValueAsString(tree) +",\"emptyTrees\":"+emptyTrees+"}" ;
     }
