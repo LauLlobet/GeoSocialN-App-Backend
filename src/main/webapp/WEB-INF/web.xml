@@ -20,13 +20,8 @@
     </servlet>
     <servlet-mapping>
        <servlet-name>YOUR_SERVLET_NAME</servlet-name>
-       <url-pattern>/YOUR_PATH/*</url-pattern>
+       <url-pattern>/*</url-pattern>
     </servlet-mapping>
-  
-    <mime-mapping>
-        <extension>.manifest</extension>
-        <mime-type>text/cache-manifest</mime-type>
-    </mime-mapping>
 
 <filter>
     <filter-name>cross-origin</filter-name>
