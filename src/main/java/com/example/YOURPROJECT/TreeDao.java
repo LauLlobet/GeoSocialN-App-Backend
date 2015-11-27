@@ -84,6 +84,7 @@ public class TreeDao {
             session.close();
             return tree;
         }catch (Exception e){
+            e.printStackTrace();
             return null;
         }
     }
