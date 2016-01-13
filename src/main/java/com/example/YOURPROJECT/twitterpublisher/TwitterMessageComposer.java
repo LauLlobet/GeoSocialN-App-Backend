@@ -89,7 +89,9 @@ public class TwitterMessageComposer {
                 pt3.length() +
                 pt4.length() +
                 pt6.length() +
-                pt7.length();
+                pt7.length() +
+                pt8ItsLengthnotCounts.length();
+
         int restOfCharactersAvaliable = maxLengthTweet - forcedCharNumbers;
         if(!( restOfCharactersAvaliable <= 10 || textBeforeLockOrBury.length() == 0)) {
             String trimmedTextBeforeLockOrBury = "\""+getTextbeforeLockOrBuryAndBoldAndSubstring(restOfCharactersAvaliable)+" \"";
