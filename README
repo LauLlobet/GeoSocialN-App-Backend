@@ -1,0 +1,9 @@
+## Backend for a twitter+geocaching like social network
+
+* Deploys a Jersey REST Api
+* Uses Hibernate
+* Uses PosGis (GPS friendly sql queries)
+* Uses Twitter API to publish tweets
+
+see it in use: [here](https://www.youtube.com/watch?v=gAVfmKrdN8k)
+
